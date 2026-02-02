@@ -1,0 +1,48 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Design {
+  id          String   @id @default(uuid())
+  userId      String
+  designImage String
+
+  printType   PrintType @default(regular)
+
+  positionX  Float @default(50)
+  positionY  Float @default(40)
+
+  size       Float @default(30)
+  rotation   Float @default(0)
+
+  productType ProductType @default(tshirt)
+  color       String @default("white")
+
+  status     DesignStatus @default(draft)
+
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+}
+
+enum PrintType {
+  regular
+  aop
+}
+
+enum ProductType {
+  tshirt
+  hoodie
+  tank
+  jacket
+}
+
+enum DesignStatus {
+  draft
+  saved
+  ordered
+}
