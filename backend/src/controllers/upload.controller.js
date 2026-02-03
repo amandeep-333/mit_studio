@@ -1,0 +1,13 @@
+export const uploadDesign = (req, res) => {
+  if (!req.file) {
+    return res.status(400).json({ error: 'No file uploaded' });
+  }
+
+  const fileUrl = `${req.protocol}://${req.get('host')}/uploads/${req.file.filename}`;
+
+  res.json({
+    success: true,
+    fileUrl,
+    fileName: req.file.filename,
+  });
+};

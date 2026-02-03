@@ -1,12 +1,8 @@
-import React from 'react';
-import DesignCustomizer from './components/DesignCustomizer';
+import DesignCustomizer from "./components/design/DesignCustomizer";
+
 
 function App() {
-  return (
-    <div className="App">
-      <DesignCustomizer />
-    </div>
-  );
+  return <DesignCustomizer />;
 }
 
 export default App;
