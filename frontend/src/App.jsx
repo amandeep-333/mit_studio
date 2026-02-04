@@ -1,8 +1,7 @@
-import DesignCustomizer from "./components/design/DesignCustomizer";
-
+import MainFile from "./components/DesignCustomizer/MainFile.jsx";
 
 function App() {
-  return <DesignCustomizer />;
+  return <MainFile />;
 }
 
 export default App;
