@@ -1,7 +1,6 @@
 import React from 'react';
 import { Upload } from 'lucide-react';
-import { TSHIRT_COLORS } from '../../constants/designConfig';
-
+import { TSHIRT_COLORS } from '@/constants/designConfig.js';
 const DesignPreview = ({
   uploadedDesign,
   designPosition,

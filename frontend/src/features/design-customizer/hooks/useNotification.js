@@ -1,5 +1,5 @@
 import { useState, useCallback } from 'react';
-import { NOTIFICATION_DURATION } from '../constants/designConfig';
+import { NOTIFICATION_DURATION } from '../../../constants/designConfig';
 
 export const useNotification = () => {
   const [notification, setNotification] = useState(null);

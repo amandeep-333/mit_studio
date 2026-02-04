@@ -1,6 +1,6 @@
 import React from 'react';
 import { Move, Maximize2 } from 'lucide-react';
-import { PRINT_TYPES } from '../../constants/designConfig';
+import { PRINT_TYPES } from '../../../constants/designConfig';
 
 const PrintTypeSelector = ({ printType, onPrintTypeChange }) => {
   return (

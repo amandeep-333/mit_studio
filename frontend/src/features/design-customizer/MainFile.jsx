@@ -1,18 +1,20 @@
-import DesignUploader from "./DesignUploader";
-import PrintTypeSelector from "./PrintTypeSelector";
-import ProductSelector from "./ProductSelector";
-import ColorSelector from "./ColorSelector";
-import DesignControls from "./DesignControls";
-import SavedDesigns from "./SavedDesigns";
-import DesignPreview from "./DesignPreview";
-import Notification from "../common/Notification";
-import { useDesignCustomizer } from "../../hooks/useDesignCustomizer";
-import { useFileUpload } from "../../hooks/useFileUpload";
-import { useNotification } from "../../hooks/useNotification";
-import { downloadDesignAsImage } from "../../utils/canvasUtils";
-import { generateUserId } from "../../utils/generateUserId";
-import { TSHIRT_COLORS } from "../../constants/designConfig";
+import Notification from "../../components/common/Notification.jsx";
+import PrintTypeSelector from "../design-customizer/components/PrintTypeSelector.jsx";
+import ColorSelector from "../design-customizer/components/ColorSelector.jsx";
+import DesignControls from "../design-customizer/components/DesignControls.jsx";
+import DesignUploader from "../design-customizer/components/DesignUploader.jsx";
+
 import { useState } from "react";
+import DesignPreview from "./components/DesignPreview.jsx";
+import { useNotification } from "./hooks/useNotification.js";
+
+import { useFileUpload } from "./hooks/useFileUpload.js";
+import { useDesignCustomizer } from "./hooks/useDesignCustomizer.js";
+import { TSHIRT_COLORS } from "@/constants/designConfig.js";
+import { downloadDesignAsImage } from "@/utils/canvasUtils.js";
+import { generateUserId } from "@/utils/generateUserId.js";
+import ProductSelector from "./components/ProductSelector.jsx";
+import SavedDesigns from "./components/SavedDesigns.jsx";
 
 function DesignCustomizer() {
   const [currentUserId] = useState(generateUserId());

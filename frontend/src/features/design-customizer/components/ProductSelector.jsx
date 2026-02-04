@@ -1,5 +1,5 @@
 import React from 'react';
-import { PRODUCTS } from '../../constants/designConfig';
+import { PRODUCTS } from '../../../constants/designConfig';
 
 const ProductSelector = ({ selectedProduct, onProductChange }) => {
   return (

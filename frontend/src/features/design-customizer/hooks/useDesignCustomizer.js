@@ -1,12 +1,12 @@
 import { useState, useEffect, useCallback } from 'react';
-import { saveDesign, getUserDesigns } from '../services/api';
+import { saveDesign, getUserDesigns } from '../../../services/api';
 import { 
   DEFAULT_DESIGN_STATE, 
   AOP_DESIGN_STATE,
   SIZE_CONSTRAINTS,
   POSITION_CONSTRAINTS 
-} from '../constants/designConfig';
-import { clampValue } from '../utils/canvasUtils';
+} from '../../../constants/designConfig';
+import { clampValue } from '../../../utils/canvasUtils';
 
 export const useDesignCustomizer = (userId, onSuccess, onError) => {
   const [designPosition, setDesignPosition] = useState(DEFAULT_DESIGN_STATE.position);

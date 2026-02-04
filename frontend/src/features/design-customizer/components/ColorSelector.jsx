@@ -1,6 +1,5 @@
 import React from 'react';
-import { TSHIRT_COLORS } from '../../constants/designConfig';
-
+import { TSHIRT_COLORS } from '@/constants/designConfig.js';
 const ColorSelector = ({ selectedColor, onColorChange, printType }) => {
   if (printType !== 'regular') return null;
 
