@@ -30,7 +30,7 @@ class AuthController {
           message: "Password must be at least 6 characters long",
         });
       }
-
+  
       const result = await authService.signup(email, password);
 
       res.status(201).json({
@@ -38,9 +38,9 @@ class AuthController {
         ...result,
       });
     } catch (error) {
-      console.error("Signup error:", error);
+      console.error("Signup error:", error);     
       res.status(400).json({
-        success: false,
+        success: false,      
         message: error.message || "Signup failed",
       });
     }
