@@ -2,7 +2,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import authAPI from './api/authAPI';
 
 
-// Initial state
+
 const initialState = {
   user: null,
   token: localStorage.getItem('token') || null,
@@ -13,7 +13,7 @@ const initialState = {
   emailForVerification: null,
 };
 
-// Async thunks
+
 export const signup = createAsyncThunk(
   'auth/signup',
   async ({ email, password }, { rejectWithValue }) => {

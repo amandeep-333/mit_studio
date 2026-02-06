@@ -18,7 +18,7 @@ model User {
   designs    Design[]
 }
 
-model OTP {
+model Otp {
   id        String   @id @default(uuid())
   otp       String
   isUsed    Boolean  @default(false)
