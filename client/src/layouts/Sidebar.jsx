@@ -1,4 +1,16 @@
 import { useState } from "react";
+import {
+  LayoutDashboard,
+  KanbanSquare,
+  Inbox,
+  Users,
+  ShoppingCart,
+  LogIn,
+  FileText,
+  LifeBuoy,
+  Crown,
+  X,
+} from "lucide-react";
 
 export default function Sidebar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -9,7 +21,7 @@ export default function Sidebar() {
       <button
         onClick={() => setIsOpen(!isOpen)}
         type="button"
-        className="text-gray-700 bg-transparent border border-transparent hover:bg-gray-200 focus:ring-4 focus:ring-gray-300 font-medium rounded-md ms-3 mt-3 text-sm p-2 focus:outline-none inline-flex sm:hidden"
+        className="text-gray-700 bg-transparent hover:bg-gray-200 focus:ring-4 focus:ring-gray-300 font-medium rounded-md ms-3 mt-3 text-sm p-2 focus:outline-none inline-flex sm:hidden"
       >
         <span className="sr-only">Open sidebar</span>
         <svg
@@ -32,65 +44,55 @@ export default function Sidebar() {
         ${isOpen ? "translate-x-0" : "-translate-x-full"} 
         sm:translate-x-0`}
       >
-        <div className="h-full px-3 py-4 overflow-y-auto">
-          <ul className="space-y-2 font-medium">
-            <SidebarItem label="Dashboard" />
-            <SidebarItem label="Kanban" badge="Pro" />
-            <SidebarItem label="Inbox" badge="2" />
-            <SidebarItem label="Users" />
-            <SidebarItem label="Products" />
-            <SidebarItem label="Sign In" />
-          </ul>
+        <div className="h-full flex flex-col">
+          {/* Logo + Close Button */}
+          <div className="flex items-center justify-between px-4 py-3 border-b border-gray-200">
+            <div className="flex items-center gap-2">
+              {/* Red circle logo */}
+              <div className="w-8 h-8 rounded-full bg-red-500" />
+              <span className="font-semibold text-gray-800">MyApp</span>
+            </div>
 
-          <ul className="space-y-2 font-medium border-t border-gray-200 pt-4 mt-4">
-            <SidebarItem label="Documentation" />
-            <SidebarItem label="Support" />
-            <SidebarItem label="PRO version" />
-          </ul>
+            {/* Close button (mobile only) */}
+            <button
+              onClick={() => setIsOpen(false)}
+              className="p-1 rounded-md hover:bg-gray-200 sm:hidden"
+            >
+              <X className="w-5 h-5" />
+            </button>
+          </div>
+
+          {/* Menu */}
+          <div className="flex-1 px-3 py-4 overflow-y-auto">
+            <ul className="space-y-2 font-medium">
+              <SidebarItem label="Dashboard" icon={LayoutDashboard} />
+              <SidebarItem label="Kanban" icon={KanbanSquare} badge="Pro" />
+              <SidebarItem label="Inbox" icon={Inbox} badge="2" />
+              <SidebarItem label="Users" icon={Users} />
+              <SidebarItem label="Products" icon={ShoppingCart} />
+              <SidebarItem label="Sign In" icon={LogIn} />
+            </ul>
+
+            <ul className="space-y-2 font-medium border-t border-gray-200 pt-4 mt-4">
+              <SidebarItem label="Documentation" icon={FileText} />
+              <SidebarItem label="Support" icon={LifeBuoy} />
+              <SidebarItem label="PRO version" icon={Crown} />
+            </ul>
+          </div>
         </div>
       </aside>
-
-      {/* Main Content */}
-      <div className="p-4 sm:ml-64 w-full">
-        <div className="p-4 border border-dashed border-gray-300 rounded-md">
-          <div className="grid grid-cols-3 gap-4 mb-4">
-            {[1, 2, 3].map((i) => (
-              <div
-                key={i}
-                className="flex items-center justify-center h-24 rounded-md bg-gray-100"
-              >
-                +
-              </div>
-            ))}
-          </div>
-
-          <div className="flex items-center justify-center h-48 rounded-md bg-gray-100 mb-4">
-            +
-          </div>
-
-          <div className="grid grid-cols-2 gap-4">
-            {[1, 2, 3, 4].map((i) => (
-              <div
-                key={i}
-                className="flex items-center justify-center h-24 rounded-md bg-gray-100"
-              >
-                +
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
     </div>
   );
 }
 
-function SidebarItem({ label, badge }) {
+function SidebarItem({ label, badge, icon: Icon }) {
   return (
     <li>
       <a
         href="#"
         className="flex items-center px-2 py-1.5 text-gray-700 rounded-md hover:bg-gray-200 hover:text-blue-600 transition-colors"
       >
+        {Icon && <Icon className="w-5 h-5 text-gray-500" />}
         <span className="flex-1 ms-3 whitespace-nowrap">{label}</span>
         {badge && (
           <span className="text-xs font-medium px-1.5 py-0.5 rounded bg-gray-200 border border-gray-300">

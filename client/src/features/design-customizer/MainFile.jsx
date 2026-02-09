@@ -70,17 +70,6 @@ function DesignCustomizer() {
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
       <Notification notification={notification} />
 
-      <header className="bg-white shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <div className="flex items-center justify-between">
-            <h1 className="text-3xl font-bold text-gray-900">
-              Custom Design Studio
-            </h1>
-            <div className="text-sm text-gray-600">House of Mit</div>
-          </div>
-        </div>
-      </header>
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           <div className="lg:col-span-1 space-y-6">
