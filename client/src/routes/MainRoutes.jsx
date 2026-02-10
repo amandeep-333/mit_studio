@@ -12,6 +12,40 @@ import {
   Route,
   Navigate,
 } from "react-router-dom";
+import MainLayout from "@/layouts/MainLayout.jsx";
+
+// function MainRoutes() {
+//   return (
+//     <Router>
+//       <Routes>
+//         <Route path="/login" element={<Login />} />
+//         <Route path="/signup" element={<Signup />} />
+//         <Route path="/verify-otp" element={<VerifyOTP />} />
+
+//         <Route
+//           path="/"
+//           element={
+//             <ProtectedRoute>
+//               <Dashboard />
+//             </ProtectedRoute>
+//           }
+//         />
+//         <Route
+//           path="/product"
+//           element={
+//             <ProtectedRoute>
+//               <MainFile />
+//             </ProtectedRoute>
+//           }
+//         />
+
+//         <Route path="*" element={<Navigate to="/login" replace />} />
+//       </Routes>
+//     </Router>
+//   );
+// }
+
+// export default MainRoutes;
 
 function MainRoutes() {
   return (
@@ -22,21 +56,15 @@ function MainRoutes() {
         <Route path="/verify-otp" element={<VerifyOTP />} />
 
         <Route
-          path="/dashboard"
           element={
             <ProtectedRoute>
-              <Dashboard />
+              <MainLayout />
             </ProtectedRoute>
           }
-        />
-        <Route
-          path="/"
-          element={
-            <ProtectedRoute>
-              <MainFile />
-            </ProtectedRoute>
-          }
-        />
+        >
+          <Route path="/" element={<Dashboard />} />
+          <Route path="/product" element={<MainFile />} />
+        </Route>
 
         <Route path="*" element={<Navigate to="/login" replace />} />
       </Routes>

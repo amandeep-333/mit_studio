@@ -38,7 +38,7 @@ export const AOP_DESIGN_STATE = {
   rotation: 0,
 };
 
-export const SIZE_CONSTRAINTS = {
+export const SIZE_CONSTRAINTS = {  
   min: 10,
   max: 80,
   step: 5,

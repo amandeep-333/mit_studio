@@ -14,13 +14,13 @@ import upload from "../config/multer.config.js";
 import { uploadImage } from "../controllers/upload.controller.js";
 import authMiddleware from "../middlewares/auth.middleware.js";
 
-const router = express.Router();   
+const router = express.Router();
 
 router.post(
   "/upload-design",
-  authMiddleware,
+
   upload.single("designFile"),
   uploadImage,
-);                    
+);
 
 export default router;

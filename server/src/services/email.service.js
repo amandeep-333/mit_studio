@@ -1,4 +1,5 @@
-import transporter from "../config/email.config.js";
+import { getTransporter } from "../config/email.config.js";
+const transporter = getTransporter();
 
 class EmailService {
   async sendOTP(email, otp) {
@@ -22,7 +23,7 @@ class EmailService {
               padding: 20px;
               background-color: #f9f9f9;
             }
-            .content {
+            .content {  
               background-color: white;
               padding: 30px;
               border-radius: 10px;

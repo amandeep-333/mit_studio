@@ -22,7 +22,6 @@ export const useDesignCustomizer = (userId, onSuccess, onError) => {
   const [isSaving, setIsSaving] = useState(false);
   const [savedDesigns, setSavedDesigns] = useState([]);
 
-  // Load user designs on mount
   useEffect(() => {
     loadUserDesigns();
   }, [userId]);

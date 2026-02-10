@@ -7,11 +7,13 @@ import authRoutes from "./routes/auth.routes.js";
 
 const app = express();
 
+const allowedOrigins = process.env.ALLOWED_ORIGINS.split(",");
+
 app.use(
   cors({
-    origin: "http://localhost:5173", // EXACT frontend URL
+    origin: allowedOrigins,
     credentials: true,
-  })
+  }),
 );
 
 app.use(express.json({ limit: "50mb" }));
@@ -20,5 +22,5 @@ app.use("/uploads", express.static("uploads"));
 app.use("/", healthRoutes);
 app.use("/api", uploadRoutes);
 app.use("/api/auth", authRoutes);
-  
+
 export default app;

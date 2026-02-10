@@ -7,15 +7,15 @@ class AuthController {
       const { email, password, name } = req.body;
 
   
-      if (!email || !password || name) {
+      if (!email || !password || !name) {
         return res.status(400).json({
           success: false,
-          message: "Email and password are required",
+          message: "Email and password are required", 
         });
       }
 
  
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;  
       if (!emailRegex.test(email)) {
         return res.status(400).json({
           success: false,
@@ -30,7 +30,7 @@ class AuthController {
         });
       }
   
-      const result = await authService.signup(email, password);
+      const result = await authService.signup(email, password, name);
 
       res.status(201).json({
         success: true,

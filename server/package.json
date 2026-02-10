@@ -5,8 +5,8 @@
   "type": "module",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon src/server.js",
-    "dev": "nodemon server.js"
+    "dev": "node --require dotenv/config src/server.js",
+    "start": "nodemon --require dotenv/config src/server.js"
   },
   "keywords": [
     "express",
